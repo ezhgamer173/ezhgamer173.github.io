@@ -1,0 +1,373 @@
+h1 {
+  color:#7da0ff;
+  font-family:verdana;
+  text-align:center;
+  text-shadow:2px 5px 10px rgba(0,0,0,0.5);
+}
+a {
+  color:#eeeeee;
+  font-size:169%
+  font-family:verdana;
+}
+h3 {
+  color:powderblue;
+  font-family:verdana;
+  font-size:125%;
+}
+b {
+  color:#7da0ff;
+  font-family:verdana;
+}
+p {
+  font-family:verdana;
+  color:#eeeeee;
+  font-size:100%;
+  text-shadow:1px 3px 5px rgba(0,0,0,0.5);
+}
+label {
+  font-family:verdana;
+  color:#eeeeee;
+  font-size:100%;
+  text-shadow:1px 3px 5px rgba(0,0,0,0.5);
+}
+body {
+  background-color:#323232;
+  transition:0.3s;
+}
+
+.normimage {
+  width: calc(49vw); 
+  height: auto;
+  overflow:hidden;
+  transition:0.3s;
+}
+form {
+  color:#eeeeee;
+  background-color:#323232;
+}
+button, input[type=submit]{
+  font-family:verdana;
+  background-color:#eeeeee;
+  border:#eeeeee;
+  border-radius:3px;
+  box-shadow:0px 2px 0px #cccccc;
+  cursor:pointer;
+/*   transition:0.4s ease-out; */
+}
+button:active, input[type=submit]:active {
+  background-color: #eeeeee;
+  box-shadow: 0 1px #999999;
+  transform: translateY(1px);
+}
+button:hover:not(".formbutton") {
+ filter:brightness(85%);
+}
+img:not(".transp") {
+  box-shadow:2px 8px 10px rgba(0,0,0,0.5);
+}
+/*button:hover{
+  animation:big 20s 1 ease-in-out alternate;
+}*/
+@keyframes spinning {
+  0% {transform: rotate(0deg) scaleX(1)}
+  25% {transform: rotate(-90deg) scaleX(0)}
+  50% {transform: rotate(180deg) scaleX(1)}
+  75% {transform: rotate(-270deg) scaleX(0)}
+  100% {transform: rotate(360deg) scaleX(1)}
+}
+@keyframes big {
+  100%, 0% { transform: scale3d(1,1,1);}
+  50% { transform: scale3d(2000,2000,2000);}
+}
+@keyframes pop {
+  100%, 0% { transform: scale3d(1,1,1) }
+  50% { transform: scale3d(1.5,1.5,1.5) }
+}
+@keyframes mymove {
+  0%   {transform: scale(1,1);}
+  25%  {transform: scale(1,0);}
+  50%  {transform: scale(1,1);}
+  75%  {transform: scale(0,1);}
+  100% {transform: scale(1,1);}
+}
+@keyframes death {
+  100%, 0% {background-color: rgb(0,0,0)}
+  50% {background-color: rgb(100,0,0)}
+}
+.death {
+  animation:death 1s infinite ease-in-out alternate;
+}
+.hidden {
+  color:#323232;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;   
+}
+.hidden::selection {
+  background: #333333;
+  color: #323232;
+}
+#spinner {
+  animation-name: spinning;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: linear;
+  }
+#nodel1 {
+  position: relative;
+  animation: mymove 5s infinite;
+  }
+#nodel2 {
+  animation-name: unpop;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: linear;
+  }
+#nose {
+  position: absolute;
+  top: 90px;
+  left: 398px;
+  width:4%;
+  height:auto;
+  transition-duration:0.25s;
+}
+/*#nose:hover {
+  animation:pop 2s 1 ease-in-out alternate;
+}*/
+#clown {
+  position: relative;
+      top: 0;
+      left: 0;
+}
+#myText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 21px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;   
+}
+#output {
+  font-size:200%;
+  text-shadow:1px 1px 1px #cccccc;
+}
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity:0.8;
+  background-color: rgb(0,0,0); /* Black background with opacity */
+  z-index: 1000; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+@keyframes chtext {
+  0% {visibility:hidden;}
+  85% {visibility:hidden;}
+  90% {visibility:visible;}
+  100% {visibility:visible;}
+}
+@keyframes chall {
+0% {
+transform:translateX(0px);
+  border-radius:10px;
+}
+10% {
+transform:translateX(200px);
+  border-radius:10px;
+}
+20% {
+  transform:translateY(200px);
+  border-radius:10px;
+}
+30% {
+  transform:translateY(150px);
+  border-radius:10px;
+}
+40% {
+  background-color:red;
+  border-radius:50px;
+  transform:translateX(0px);
+}
+50% {
+  border-radius:0px;
+  transform:translateX(200px);
+  background-color:red;
+}
+60% {
+  transform: skew(80deg);
+}
+70% {
+  transform: skew(-80deg);
+}
+75% {
+  transform:skew(0deg);
+}
+80% {
+  transform: rotateY(60deg);
+}
+82% {
+  transform: rotateY(0deg);
+}
+85% {
+  transform: rotate(-60deg) rotateY(-60deg);
+}
+87% {
+  transform: rotateY(0deg);
+}
+90% {
+  transform: rotateX(60deg);
+}
+92% {
+  transform: rotateX(0deg);
+}
+95% {
+  transform: rotate(60deg) rotateX(-60deg);
+}
+97% {
+  transform: rotateX(0deg);
+}
+100% {
+  background-color:red;
+}
+}
+#chdiv {
+  cursor:none;
+/*   position:absolute; */
+  box-shadow:0px 5px 0px #cc0000, 2px 7px 10px black;
+width:50px;
+height:50px;
+background-color:red;
+border-radius:10px;
+transition:1s, background-color 0.2s ease-out, box-shadow 0.1s ease-out;
+transform:translateX(0);
+}
+#chdiv:hover {
+  background-color:#bb0000;
+  box-shadow:0px 5px 0px #880000, 2px 7px 10px black;
+animation-name: chall;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.challenge {
+  user-select: none;
+  visibility:hidden;
+}
+#chdiv:hover .challenge {
+  animation-name: chtext;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#endurancediv {
+  cursor:none;
+/*   position:absolute; */
+  box-shadow:0px 5px 0px #cc0000, 2px 7px 10px black;
+width:50px;
+height:50px;
+background-color:red;
+border-radius:10px;
+transition:background 0.2s ease-out, box-shadow 0.1s ease-out;
+transform:translateX(0);
+}
+#endurancediv:hover {
+  background-color:#bb0000;
+  box-shadow:0px 5px 0px #880000, 2px 7px 10px black;
+}
+#ballistic {
+height:100%;
+width:auto;
+margin:auto;
+}
+#party {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+/*   position:absolute; */
+  box-shadow:0px 5px 0px #cc0000, 2px 7px 10px black;
+width:50px;
+height:50px;
+background-color:red;
+border-radius:10px;
+transition:0.2s ease-out;
+transform:translateX(0);
+}
+#party:hover {
+  animation:partyd 1s linear infinite;
+}
+@keyframes partyd {
+  0% {cursor:pointer;background-color:red;box-shadow:0px 5px 0px #cc0000, 2px 7px 10px black;transform:rotate(0deg) skewX(0deg)}
+  20% {cursor:wait;background-color:lime;box-shadow:0px 5px 0px #00cc00, 2px 7px 10px black;}
+  25% {transform:rotate(90deg) skewX(30deg);}
+  40% {cursor:move;background-color:blue;box-shadow:0px 5px 0px #0000cc, 2px 7px 10px black;}
+  50% {transform:rotate(180deg) skewX(0deg);}
+  60% {cursor:copy;background-color:yellow;box-shadow:0px 5px 0px #cccc00, 2px 7px 10px black;}
+  75% {transform:rotate(270deg) skewX(-30deg);}
+  80% {cursor:help;background-color:cyan;box-shadow:0px 5px 0px #00cccc, 2px 7px 10px black;}
+  100% {cursor:no-drop;background-color:magenta;box-shadow:0px 5px 0px #cc00cc, 2px 7px 10px black;transform:rotate(360deg) skewX(0deg);}
+}
+/* 100, 125, 80, 100 */
+.clickable{
+  cursor: pointer;
+  transition:transform 0.4s ease-out, filter 0.2s ease-out;
+}
+/* input[type=text] {
+  transition:0.4s ease-out;
+} */
+.clickable:hover{
+  transform: scale(0.95);
+  filter:brightness(90%);
+}
+#demo {
+  width:162px;
+  border-style:double;
+  border-color:#eeeeee;
+  border-width:3px;
+  border-radius:10px;
+}
+/* * {
+  cursor:none;
+} */
+.fakebutton{
+  text-decoration:none;
+  color:#111111;
+  font-family:verdana;
+  background-color:#eeeeee;
+  border:#eeeeee;
+  border-radius:3px;
+  box-shadow:0px 2px 0px #cccccc;
+  cursor:pointer;
+/*   transition:0.4s ease-out; */
+}
+.fakebutton:active{
+  background-color: #eeeeee;
+  box-shadow: 0 1px #999999;
+  transform: translateY(1px);
+}
+.fakebutton:hover{
+ filter:brightness(85%);
+}
+#never {
+  z-index:10000;
+  border:0px;
+  margin:0px;
+  text-align:left;
+  left:0px;
+  top:0px;
+  position:fixed;
+  width:100%;
+  height:117vh;
+}

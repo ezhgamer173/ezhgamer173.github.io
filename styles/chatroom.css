@@ -1,0 +1,11 @@
+iframe {
+  border-style:solid;
+  border-color:#eeeeee;
+  border-width:3px;
+  border-radius:10px;
+  background-color:transparent;
+  box-shadow:3px 5px 10px #000,-3px -5px 10px #000;
+}
+span {
+  font-family:verdana;
+}
